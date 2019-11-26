@@ -35,13 +35,6 @@ public class UsuarioControlador {
 
 	@PostMapping(path="/cadastrar")
 	public Usuario salvar(Usuario usuario) {
-		System.out.println(usuario);
-		Usuario usuarioNovo = new Usuario("12345678932", "eu", "eu@eu", "1234");
-		System.out.println(usuarioNovo);
-		System.out.println(usuario.getId());
-		System.out.println(usuario.getNome());
-		System.out.println(usuario.getEmail());
-		System.out.println(usuario.getTelefones());
 		ur.save(usuario);
 		return usuario;
 	}
