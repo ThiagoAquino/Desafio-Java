@@ -35,20 +35,21 @@ public class UsuarioControlador {
 
 	@PostMapping(path="/cadastrar")
 	public Usuario salvar(Usuario usuario) {
-		//System.out.println(usuario);
+		System.out.println(usuario);
 		Usuario usuarioNovo = new Usuario("12345678932", "eu", "eu@eu", "1234");
 		System.out.println(usuarioNovo);
-		System.out.println(usuarioNovo.getId());
-		System.out.println(usuarioNovo.getNome());
-		System.out.println(usuarioNovo.getEmail());
-		ur.save(usuarioNovo);
-		return usuarioNovo;
+		System.out.println(usuario.getId());
+		System.out.println(usuario.getNome());
+		System.out.println(usuario.getEmail());
+		System.out.println(usuario.getTelefones());
+		ur.save(usuario);
+		return usuario;
 	}
 
 	@GetMapping(path="/listar")
 	public @ResponseBody Iterable<Usuario> listar(){
 		Iterable<Usuario> usuarios = null;
-		System.out.println(usuarios = ur.findAll());
+		usuarios = ur.findAll();
 		return usuarios;				
 	}
 
